@@ -1,0 +1,85 @@
+1. Create folder (mkdir calculator)
+2. Create file (touch calculator.js)
+2a. Make sure you are in the folder
+3. npm init (fill out the required fileds)
+4. npm install express
+5. npm install body-parser
+5b git init
+6. write code in .js file
+
+	const express = require("express");
+	const bodyParser = require("body-parser");
+	const https = require("https");
+
+	const app = express();
+	app.use(bodyParser.urlencoded({extended: true}));
+
+	app.get("/", function(req, res) {
+		res.send("Hello World");
+	})
+	app.listen(3000, function() {
+		console.log("Server is running on port 3000.");
+	})
+
+7. nodemon calculator.js (originally run with: node calculator.js)
+
+*******************************************************************
+
+*** Heroku install ***
+
+1. Install Heroku via (.exe)
+2. heroku login (if you have a heroku account this will take you to the web page)
+3. node --version, npm --vrsion, git --version, heroku --version (all to separate line, check versions)
+4. touch Procfile (create Procfile {no extension})
+5. web: node app.js (write into Procfile this line with .js you use)
+6. git init
+7. git add .
+8. git commit -m "first commit"
+9. Might have to configure git (git config --global user.email "mail@mail.com")
+9. Might have to configure git (git config --global user.name "Name Name")
+10. heroku create (create heroku project)
+11. git push heroku master (push it to there server)
+12. heroku logs (check logs)
+*** changing a project
+13. git add.
+14. git commit -m "changed h1"
+15. git push heroku master
+
+
+*** Git version control (basic) ***
+
+1. git init
+2. git add .
+3. git commit -m "First commit"
+4. git push heroku master
+
+*** Git version control (extra) ***
+ 
+ 1. git status (shows e.g.: untracked files or modified files)
+ 2. git add chapter1.txt (add a specific file, unlike { git add . })
+ 3. git log (see the commitments you made)
+ 4. git diff chapter3.txt (check the difference between last ver and the new one)
+ 5. git checkout chapter3.txt (rollback to the prev ver)
+
+
+ *** Git to GitHub ***
+
+ 1. git remote add origin https://github.com/AttilaSzabo-dev/story.git
+ 2. git push -u origin master
+ 
+ *** Ignore files ***
+
+ 1. git rm --cached -r . (remove all files what was added to git)
+ 2. touch .gitignore (create file, no extension)
+ 3. write the filmenames into this file what you want to ignore for upload
+ 
+
+ *** GitHub to Git ***
+ 1. git clone https://github.com/austinzheng/swift-2048.git
+
+
+ *** Git Branching ***
+ 1. git branch alien-plot (create alien-branch {doesnt work if there is no commit made})
+ 2. git checkout alien-plot (switch to alien-plot branch)
+ 3. git merge alien-plot (merge alien-plot branch to the master branch)
+
